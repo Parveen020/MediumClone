@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs",{value:val}) %>
+<div id="writingbox">
+    <form action="/create-submit" id="createblog" method="POST">
+        <input type="text" name="ttl" id="title" class="content" placeholder="title" required>
+        <textarea name="ctnt" id="innercontent" cols="90" rows="16" placeholder="blog" required></textarea>
+        <button id="postbtn">Post</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs') %>

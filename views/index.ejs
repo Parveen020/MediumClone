@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs",{value:val}) %>
+
+<div id="container">
+    <div id="upperblock">
+        <p>Create Your Blog</p>
+    </div>
+    <div id="middleblock">
+        <div id="leftbox">
+            <p id="para">Creating your blog is an exciting venture, offering a platform to share your ideas and experiences globally. 
+                Choose a platform like WordPress, Blogger, or Medium, and personalize your blog with a stylish design that reflects your brand. 
+                Craft compelling content aligned with your passions, and regularly update your blog to build a community through comments and social media. 
+                Whether you're into creative writing, showcasing expertise, or documenting your journey, blogging provides a space for self-expression and connection. 
+                Embrace the creative freedom, start your blog, and embark on a fulfilling journey of sharing and community building.
+            </p>
+            <form action="/submit" method="POST">
+                <button id="btn" name="/submit">Create</button>
+            </form>
+        </div>
+        <div id="rightbox">
+            <img id="docs" src="images/docs.jpeg" alt="docs image">
+        </div>
+    </div>
+    <div id="lowerblock">
+        <p>Happy Writing</p>
+    </div>
+</div>
+
+<% if (isLoggedIn) { %>
+    <div id="lowestblock">
+        <hr>
+        <p id="headingtxt">Your Blogs...</p>
+        <% for( let item of listitems ) { %>
+            <div id="box">
+                <div id="headingbox">
+                    <p class="blogitem" id="itemtitle"><a href="/blog?title=<%= encodeURIComponent(item.title) %>" id="headinglink"><%= item.title %></a></p>
+                </div>
+                <div id="subtitlebox">
+                    <p class="blogitem" id="itemcontent"><%-item.content.trim().split(" ").slice(1, 15).join(" ") %>...</p>
+                </div>
+                <div id="credentialsbox">
+                    <p class="blogitem" id="itemauthor"><Strong>Author: </Strong><%= item.user_name %></p>
+                    <p class="blogitem"><strong>Created: </strong><%= item.timestamp %></p>
+                </div>
+            </div>
+        <% } %>
+        
+    </div>
+<% } %>
+
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs",{value:val}) %>
+
+<% if (isLoggedIn) { %>
+    <div id="blog">
+        <h1 id="ttl"><%= title %></h1>
+        <p id="ctnt"><%- content %></p>
+        <div id="buttonbox">
+            <form action="/delete" method="post">
+                <input type="hidden" name="deleteItemId" value="<%= id %>">
+                <button id="delete" class="delete" onclick="confirmDelete(event)">
+                    <video src="assets/icons/bin-file.mp4" autoplay loop alt="Delete Post"></video>
+                </button>
+            </form>
+            <form action="/edit" method="post">
+                <input type="hidden" name="postId" value="<%= id %>">
+                <button id="edit" class="edit"><video src="assets/icons/edit.mp4" autoplay loop alt="Edit Post"></video></button>
+            </form>
+        </div>
+    </div>
+<% } else { %>
+    <div id="blog">
+        <h1 id="ttl"><%= title %></h1>
+        <p id="ctnt"><%- content %></p>
+    </div>
+<% } %>
+
+<%- include('partials/footer.ejs') %>
+
+

@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs",{value:val}) %>
+<div id="searchblock">
+    <form id="searchform" action="/search" method="post">
+        <input type="text" id="SearchHeading" name="SHeading" placeholder = "" autocomplete="off" autofocus="true" />
+        <button id="searchbutton" class="searchbutton">Search</button>
+    </form>
+</div>
+<div id="lowestblock">
+    <% for( let item of listitems ) { %>
+        <div id="box">
+            <!-- <p id="headingtxt">Blogs over database...</p> -->
+            <div id="headingbox">
+                <p class="blogitem" id="itemtitle"><a href="/blog?title=<%= encodeURIComponent(item.title) %>" id="headinglink"><%= item.title %></a></p>
+            </div>
+            <div id="subtitlebox">
+                <p class="blogitem" id="itemcontent"><%-item.content.trim().split(" ").slice(1, 15).join(" ") %>...</p>
+            </div>
+            <div id="credentialsbox">
+                <p class="blogitem" id="itemauthor"><Strong>Author: </Strong><%= item.user_name %></p>
+                <p class="blogitem"><strong>Created: </strong><%= item.timestamp %></p>
+            </div>
+        </div>
+    <% } %>
+    
+</div>
+
+
+<%- include("partials/footer.ejs") %>

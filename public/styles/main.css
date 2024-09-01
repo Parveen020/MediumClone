@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+}
+
+main{
+    width:100%;
+    height: auto;
+    /* background-color: #0056b3; */
+    gap:100px;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin:20px 0px 20px 0px;
+    /* min-height:auto; */
+    /* border:2px solid black; */
+}
+
+nav{
+    width: 100%;
+    height:8%;
+    margin:8px 0px 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width:auto;
+    height:90%;
+    /* background-color: bisque; */
+    margin-left:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width:60px;
+    height: 60px;
+}
+.logo a{
+    text-decoration: none;;
+    color:black;
+}
+
+.logo p{
+    font-family:'Salsa';font-size:  40px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+
+.navbar-items{
+    width: 700px;;
+    height:90%;
+    margin-right:10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: rgb(132, 130, 130); */
+}
+
+#navbar-items a{
+    text-decoration: none;
+    color:black;
+    font-family:'Salsa';font-size:  20px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 26.4px;
+    position: relative; /* Ensure proper positioning of the underline */
+}
+
+#navbar-items a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially width is 0 */
+    height: 2px; /* Set the height of the underline */
+    background-color: black; /* Set initial color */
+    transition: width 0.3s ease, left 0.3s ease; /* Add transition for width and left properties */
+}
+
+#navbar-items a:hover::before {
+    width: 100%; /* Expand width to 100% on hover */
+    left: 0; /* Ensure the underline starts from the left */
+}
+
+#navbar-items a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0; /* Initially width is 0 */
+    height: 2px; /* Set the height of the underline */
+    background-color: black; /* Set initial color */
+    transition: width 0.3s ease, right 0.3s ease; /* Add transition for width and right properties */
+}
+
+#navbar-items a:hover::after {
+    width: 100%; /* Expand width to 100% on hover */
+    right: 0; /* Ensure the underline ends at the right */
+}
+
+.ftr{
+    width:100%;
+    height:50px;
+    border:2px solid black;
+    /* background-color:aquamarine ; */
+    padding-top:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ftr p{
+    font-family:'Salsa';font-size:  20px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+}
+
+
+
+/* #searchItems{
+    width:95%;
+    height:100%;
+    /* margin: 0 20px 0 20px; */
+    /* border:2px solid black;
+    display:flex;
+    justify-content: space-around;
+    align-items: center; */
+/* } */
+
+/* #searchInput{
+    width:70%;
+    height: 100%;
+    background-color: #0056b3;
+} */
+
+
+
+
+#lowestblock, #box{
+    width:100%;
+    height:auto;
+    min-height: 460px;
+    border-radius:20px;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#lowestblock{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#box{
+    margin: 10px; 
+    padding: 2px;
+}
+
+#lowestblock #headingtxt{
+    font-family:'Salsa';font-size:  40px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    color:teal;
+}
+
+#lowestblock hr {
+    margin: 0px 0px 60px 0px;
+    width:80%;
+    height:5px;
+    border: 2px;
+    color:black;
+    border-top: 2px solid black;
+}
+
+#box{
+    margin:20px 0px 20px 0px;
+    width:70%;
+    height: 120px;
+    min-height:0px;
+    border:2px solid black;
+    border-radius:10px;
+    align-items: center;
+}
+
+#box:hover{
+    box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.5);
+}
+
+#box #headingbox a{
+    text-decoration:none;
+    color:black;
+}
+
+#box:active {
+  background-color: #eef0f2;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+#headingbox,#subtitlebox,#credentialsbox{
+    width:95%;
+    height: 30%;
+    font-family:'Salsa';font-size:  40px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    text-align:start;
+}
+
+.blogitem{
+    padding-top:5px;
+}
+
+#subtitlebox{
+    font-size:20px;
+    /* background-color: aqua; */
+}
+
+#credentialsbox{
+    height: 20%;
+    font-size:17px;
+    /* background-color: aquamarine; */
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#container{
+    width:100%;
+    min-height: 650px;
+    /* border: 2px solid black; */
+    /* margin:20px 150px 20px 150px;  */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#upperblock, #lowerblock{
+    width:fit-content;
+    height: 70px;
+    /* border: 2px solid black;; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideFromUP 1s ease forwards;
+}
+
+#lowerblock{
+    animation: slideFromDown 1s ease forwards;
+}
+
+@keyframes slideFromUP {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }  
+}
+
+@keyframes slideFromDown {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#upperblock p,#lowerblock p{
+    font-family:'Salsa';font-size:  50px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    color:cornflowerblue;
+}
+
+#middleblock{
+    width:70%;
+    height: 400px;
+    /* border:2px solid black; */
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-around;
+}
+
+#middleblock #leftbox{
+    width:40%;
+    height: 400px;
+    /* background-color: rgb(166, 166, 205); */
+    /* margin:0px 5px 0 5px; */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    animation: slideFromLeft 1s ease forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }  
+}
+
+#middleblock #leftbox p{
+    font-family:'Salsa';font-size:  15px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    color:rgb(223, 100, 237);
+    text-align: center;
+}
+
+#middleblock #leftbox #btn{
+    width:140px;
+    height: 40px;
+    border-radius: 10px;
+    border:2px solid white;
+    background-color:blue;
+    font-family:'Salsa';font-size:  15px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    color:rgb(237, 237, 238);
+    text-align: center;
+}
+
+#buttonbox{
+    width:150px;
+    height: 100px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#searchblock{
+    width:100%;
+    height:50px;
+    /* background-color:aqua ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 -50px 0;
+}
+
+#searchform{
+    width:70%;
+    height:100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-flow:row;
+    justify-content: space-around;
+}
+
+#SearchHeading{
+    font-family:'Salsa';font-size:  25px; font-style: normal; font-variant: normal; font-weight: 100; line-height: 16.4px;
+    width:80%;
+    height: 100%;
+    border-radius:10px;
+    border:2px solid black;
+    
+}
+#searchbutton{
+    font-family:'Salsa';font-size:  25px; font-style: normal; font-variant: normal; font-weight: 100; line-height: 16.4px;
+    width:10%;
+    height:100%;
+    border-radius:10px;
+    border:2px solid black;
+}
+
+#btn:hover,.edit:hover,.delete:hover, #searchbutton:hover{
+    opacity:0.5;
+    background-color: grey;
+}
+
+#btn:active,.edit:active,.delete:active, #searchbutton:active{
+    /* background-color: #0056b3; */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+#middleblock #rightbox{
+    width:45%;
+    height: 400px;
+    animation: slideFromRight 1s ease forwards;
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }  
+}
+
+#middleblock #rightbox img{
+    width:498px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#lowerblock p{
+    color:tomato;
+}
+
+
+#aboutcontainer{
+    width:90%;
+    height: 600px;
+    margin:20px 0px 20px 60px; 
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-around; */
+    gap:20px;
+    align-items: center;
+}
+
+#para1,#description,#Apart,#points,#slogan{
+    font-family:'Salsa';font-size:  60px; font-style: normal; font-variant: normal; font-weight: 550; line-height: 26.4px;
+    color:rgb(135, 151, 241);
+    margin:20px 0px 20px 0px;
+}
+#para1{
+    animation: slideFromUP 1s ease forwards;
+}
+#description{
+    animation: slideFromLeft 1s ease forwards;
+}
+
+
+#description,#points,#slogan{
+    font-size:  20px; font-weight: 500;
+    color:rgb(80, 80, 80);
+    margin-top:10px;
+    text-align: center;
+}
+
+#Apart{
+    color:rgb(186, 124, 243);
+    text-align: center;
+    animation: slideFromRight 1s ease forwards;
+}
+
+#points{
+    margin:20px 0px 20px 0px;
+    list-style: none;
+    animation: slideFromDown 1s ease forwards;
+}
+
+#slogan{
+    margin-top:0px;
+    animation: slideFromDown 1s ease forwards;
+}
+
+#contactdetails,#writingbox,#login-form,#registration-form{
+    width:90%;
+    height: 523px;
+    margin:20px 0px 20px 60px; 
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-around; */
+    gap:20px;
+    align-items: center;
+}
+
+#contactdetails #hdng,#login-heading,#register-heading{
+    font-family:'Salsa';font-size:  60px; font-style: normal; font-variant: normal; font-weight: 550; line-height: 26.4px;
+    margin:40px 0px 20px 0px; 
+    animation: slideFromUP 1s ease forwards;
+}
+
+#register-heading{
+    width: fit-content;
+}
+
+#contactdetails #form,#login-form form,#registration-form form{
+    font-family:'Salsa';font-size:  60px; font-style: normal; font-variant: normal; font-weight: 550; line-height: 26.4px; 
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-around; */
+    gap:20px;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+#name, #email, #suggestion, #submitbtn, #createblog #title, #createblog #innercontent, #postbtn,.login-content{
+    width:900px;
+    height: 40px;
+    border:2px solid rgb(95, 93, 93);
+    border-radius: 15px;
+    text-align: center;
+    font-family:'Salsa';font-size:  20px; font-style: normal; font-variant: normal; font-weight: 550; line-height: 26.4px; 
+}
+#name{
+    animation: slideFromRight 1s ease forwards;
+}
+#email{
+    animation: slideFromLeft 1s ease forwards;
+}
+
+#suggestion{
+    height:100px;
+    animation: slideFromDown 1s ease forwards;
+}
+
+#submitbtn, #postbtn,#Login,#registerBtn{
+    width:50%;
+    border-radius: 15px;
+    border:2px solid grey;
+    animation: slideFromDown 1s ease forwards;
+}
+#loginBtn{
+    text-decoration: underline;
+    font-family:'Salsa';font-size:  20px; font-style: normal; font-variant: normal; font-weight: 550; line-height: 26.4px;
+    color:#0056b3;
+    border:#c4cdd6;
+    background: none;
+    padding-top:none;
+    /* border:2px solid black; */
+}
+/* #login-form{
+    border:2px solid black;
+} */
+#Login,#registerBtn{
+    width:450px;
+}
+#postbtn{
+    margin-top: 10px;
+}
+
+#loginBtn:hover{
+    color:red;
+}
+#submitbtn:hover,#postbtn:hover,#Login:hover,#registerBtn:hover{
+    opacity:0.5;
+    background-color: grey;
+}
+
+#submitbtn:active,#postbtn:active,#Login:active,#registerBtn:active{
+    background-color: #c4cdd6;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+#writingbox #createblog{
+    /* border: 2px solid black; */
+    /* min-height :600px; */
+    gap:20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#createblog #title{
+    width:950px;
+    height:60px;
+    font-size: 60px;
+    border:#c4cdd6;
+    text-align: left;
+}
+
+#createblog #innercontent{
+    width:auto;
+    height: auto;
+    
+    /* min-height:800px; */
+    font-size: 20px;
+    padding-left: 10px;
+    border:#c4cdd6;
+    text-align: left;
+}
+
+#blog,.edit-form{
+    width:100%;
+    height: auto;
+    padding-left:70px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 555px;
+}
+
+#blog #ttl, #updatedTitle{
+    font-family:'Salsa';font-size:  60px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    text-align: center; 
+    width: 90%;
+    min-height: 60px;
+    border: none;
+    outline: none;
+    /* background-color: aquamarine; */
+}
+
+#updatedTitle{
+        
+}
+
+#blog #ctnt, #updatedContent{
+    font-family:'Salsa';font-size:  20px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    text-align: left;
+    width:90%;
+    min-height: 523px;
+    padding-bottom: 20px;
+    border: none;
+    outline: none;
+    /* background-color: #0056b3; */
+}
+
+#output{
+    width:90%;
+    height: 555px;
+    margin:0px 70px 0px 70px;
+}
+
+#output h1,#output p{
+    font-family:'Salsa';font-size:  40px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    text-align: left;
+}
+
+#output h1{
+    padding:40px 0px 40px 0px;
+}
+
+#output p{
+    font-size:15px;
+}
+
+#login-form{
+    justify-content: space-between;
+}
+#registration-form{
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content{
+    width:450px;
+}
+.col-sm-4{
+    font-size:20px;
+}
+
+#headingbox p{
+    color:black;
+}
+
+#hadinglink{
+    color:black;
+    text-decoration:none;
+}
+#headinglink:hover {
+    color: red;
+}
+
+#edit,#delete{
+    width:50px;
+    height: 50px;
+    border-radius:50%;
+    overflow: hidden;
+    position: relative;
+}
+
+#edit video ,#delete video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

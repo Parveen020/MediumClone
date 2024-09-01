@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs",{value:val}) %>
+
+<div id="contactdetails">
+    <h1 id="hdng">Contact me</h1>
+    <form action="/contact-submit" method="POST" id="form">
+        <input type="text" name="username" id="name" class="textinput" placeholder="Name" required>
+        <input type="email" id="email" class="textinput" placeholder="Email" required>
+        <textarea type="text" id="suggestion" class="textinput" placeholder="Suggestions" rows="4" cols="50" ></textarea>
+        <button id="submitbtn">Submit</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs') %>

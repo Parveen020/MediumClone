@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs",{value:val}) %>
+
+<div id="blog">
+    <form class="edit-form" action="/edit-form" method="post">
+        <input type="hidden" name="updatedItemID" value="<%= id %>">
+        <input id="updatedTitle" type="text" name="updatedItemTitle" value="<%= title %>" autocomplete="off"
+        autofocus="true" />
+        <!-- <input id="updatedContent" type="text" name="updatedItemContent" value="" autocomplete="off"
+        autofocus="true" /> -->
+        <textarea id="updatedContent" name="updatedItemContent" cols="90" rows="16" autocomplete="off" autofocus="true" required>
+            <%= content.replace(/<br\s*\/?>/gi, '\n') %>
+        </textarea>
+        <button id="edit" class="edit" >
+            <video src="assets/icons/double-check.mp4" autoplay loop alt="Done"></video>
+        </button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
